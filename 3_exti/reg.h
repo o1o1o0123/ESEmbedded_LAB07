@@ -93,13 +93,15 @@
 //EXTI
 #define EXTI_BASE 0x40013C00
 
-#define EXTI_IMR_OFFSET 0x00
 
 #define EXTI_RTSR_OFFSET 0x08
-
+#define TRx_BIT(y) y
 #define EXTI_FTSR_OFFSET 0x0C
-
+//#define TRx_BIT(y) y
+#define EXTI_IMR_OFFSET 0x00
+#define MRx_BIT(y) y
 #define EXTI_PR_OFFSET 0x14
+#define PRx_BIT(y) y
 
 //SYSCFG
 #define SYSCFG_BASE 0x40013800
