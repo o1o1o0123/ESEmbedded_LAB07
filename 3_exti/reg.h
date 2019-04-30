@@ -7,6 +7,7 @@
 #define REG(addr) (*((volatile uint32_t *)(addr)))
 
 #define CLEAR_MASK(highest_bit, lowest_bit) (((highest_bit) - (lowest_bit)) >= 31 ? (uint32_t)0xFFFFFFFF : ~(((UINT32_1 << ((highest_bit) - (lowest_bit) + 1)) - 1) << (lowest_bit)))
+
 #define WRITE_BITS(addr, highest_bit, lowest_bit, data) (REG(addr) = (REG(addr) & CLEAR_MASK(highest_bit, lowest_bit)) | ((uint32_t)(data) << (lowest_bit)))
 
 #define SET_BIT(addr, bit) (REG(addr) |= UINT32_1 << (bit))
@@ -98,6 +99,7 @@
 #define TRx_BIT(y) y
 #define EXTI_FTSR_OFFSET 0x0C
 //#define TRx_BIT(y) y
+
 #define EXTI_IMR_OFFSET 0x00
 #define MRx_BIT(y) y
 #define EXTI_PR_OFFSET 0x14
